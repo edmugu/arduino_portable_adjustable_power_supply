@@ -1,4 +1,4 @@
-# [Arduino Adjustable Portable  Power Supply](https://edmugu.github.io/arduino_adjustable_power_supply/) 
+# [Arduino Adjustable Power Supply](https://edmugu.github.io/arduino_adjustable_power_supply/) 
 
 ## Abstract
 
@@ -22,30 +22,24 @@ Before we design anything, we better set some use cases to come with some charac
 
 Input battery
 
-```markdown
-|------------|---------|---------|---------|-------------------------------|
-| Use Case   | Voltage | Current | Power   | Notes                         |
-|            | [Volts] | [Amps]  | [Watts] |                               |
-|------------|---------|---------|---------|-------------------------------|
-| AA         | 1.5     | 0.050   | 0.075   | This voltage might be too low |
-| 9-Volt     | 9       | 0.111   | N/A     | Forced Power to 1 Watt        |
-| CAR        | 12.6    | 0.793   | > 10    |                               |
-| Power Bank | 5       | 2.4     | 12      |                               |
-|------------|---------|---------|---------|-------------------------------|
-```
+| Use Case   | Voltage [V] | Current [A] | Power [W] | Notes                         |
+|------------|-------------|-------------|-----------|-------------------------------|
+| AA         | 1.5         | 0.050       | 0.075     | This voltage might be too low |
+| 9-Volt     | 9           | 0.111       | N/A       | Forced Power to 1 Watt        |
+| CAR        | 12.6        | 0.793       | > 10      |                               |
+| Power Bank | 5           | 2.4         | 12        |                               |
+
 
 Output Use cases
 
-```markdown
-|------------|-----------------|----------------|
+
 | OUTPUT     | Ideal           | Max            |
 |------------|-----------------|----------------|
 | Power      | 0.1 Watts       | 11 Watts       |
 | Current    | 0.1 Amp         | 1 Amp          |
 | Voltage    | 5 Volts         | 23 Volts       |
 | LOAD       | 50 Ohms         | NA             |
-|------------|-----------------|----------------|
-```
+
 
 
 
