@@ -2,7 +2,10 @@
 """
 Created on Sat Feb 13 21:02:19 2021
 
-@author: emuno
+It simulates the output of the linear regulator output.
+
+@author: Eduardo Munoz
+@email: edmugu@protonmail.com
 """
 import pandas as pd
 import matplotlib.pyplot as plt
