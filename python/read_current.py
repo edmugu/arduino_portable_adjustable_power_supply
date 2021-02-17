@@ -30,7 +30,7 @@ pin_name = {"0": "Iin", "4": "Iout"}
 Rsense = 0.1
 gain = 100
 scale = 1.0 / gain  # this is the voltage on the sense resistor before it is amplified
-scale = scale / Rsense  # This is the current
+scale = scale / Rsense  # This is the current going through Rsense
 
 
 print("\nread_current.py version %s" % version)
@@ -39,9 +39,9 @@ print("FOR HELP TYPE tools_read_voltage.py --help\n\n")
 from pyfirmata import Arduino, util
 
 
-def read_voltage(port="COM3"):
+def read_current(port="COM3"):
     """
-    It reads the voltage expecified by 'arduion_port'. 
+    It reads the current expecified by 'port'. 
     EXAMPLE: 
         python tools_read_voltage.py --arduion_port COM3
     """
@@ -65,10 +65,10 @@ def read_voltage(port="COM3"):
         a[p] = board.analog[int(p)].read()
         for read_tries in range(99):
             if a[p] is not None:
-                vcc_percent = a[p]
+                vcc_percent = a[p] * 100
                 a[p] = a[p] * arduino_vcc
                 print(
-                    "Read %3.2f percent of VCC on pin a%s (= %3.2f Volts)"
+                    "Read %#04.1f %% of VCC on pin a%s (= %3.2f Volts)"
                     % (vcc_percent, p, a[p])
                 )
                 break
@@ -84,4 +84,4 @@ def read_voltage(port="COM3"):
 
 
 if __name__ == "__main__":
-    fire.Fire(read_voltage)
+    fire.Fire(read_current)
