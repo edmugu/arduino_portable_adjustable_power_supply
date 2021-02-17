@@ -63,7 +63,10 @@ def read_voltage(port="COM3"):
             if a[p] is not None:
                 vcc_percent = a[p]
                 a[p] = a[p] * arduino_vcc
-                print("Read %3.2f percent of VCC on pin a%s (= %3.2f Volts)" % (vcc_percent, p, a[p]))
+                print(
+                    "Read %3.2f percent of VCC on pin a%s (= %3.2f Volts)"
+                    % (vcc_percent, p, a[p])
+                )
                 break
 
         if a[p] is None:
