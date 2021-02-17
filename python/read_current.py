@@ -74,7 +74,7 @@ def read_current(port="COM3"):
                 break
 
         if a[p] is None:
-            print("Read NONE on pin a%s" % p)
+            print("Read NONE on pin a%s [this might be a bug on the board's FW. run again]" % p)
 
     print("\nCalculating the Currents on the board")
     for p in pin_list:
