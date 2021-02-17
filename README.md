@@ -17,6 +17,8 @@ On the original design by Szolusha there are 4 modules. (1)  a switching regulat
 We will modify each block to fit our needs, which are to make this portable and usable with any common house hold batteries . And to also to make this friendly to the Arduino and Beaglebone modules there is a secondary supply that is fixed to supply 5V on a USB port. So you can power your Arduino without compromising the main power output.
 
 
+![logic schematics](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/python/Assets/Arduino-power-supply.png "logic schematics")
+
 
 ## Use cases
 
@@ -151,6 +153,6 @@ This is the final stage of the power supply. By having a current monitor at the 
 
 ## How to use
 
-The easiest way to monitor voltage is use the Arduion Firmata library. This can easily be uploaded by the arduion IDE by opening the example firmata project and uploading it to the Arduino. After that you can run the /python/read_voltage.py script provided in this repo. Note the snip-it shown below of the tool running. 
+The easiest way to monitor voltage is to use the Arduion Firmata library. This can easily be uploaded by the arduion IDE by opening the example firmata project and uploading it to the Arduino. After that you can run the /python/read_voltage.py script provided in this repo.
 
 ![read_voltage.py.png](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/read_voltage.py.png "read_voltage.py.png")
