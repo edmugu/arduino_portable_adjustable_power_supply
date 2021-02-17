@@ -68,7 +68,7 @@ def read_current(port="COM3"):
                 vcc_percent = a[p] * 100
                 a[p] = a[p] * arduino_vcc
                 print(
-                    "Read %#04.1f %% of VCC on pin a%s (= %3.2f Volts)"
+                    "Read %#04.1f%% of VCC on pin a%s (= %3.2f Volts)"
                     % (vcc_percent, p, a[p])
                 )
                 break
@@ -76,7 +76,7 @@ def read_current(port="COM3"):
         if a[p] is None:
             print("Read NONE on pin a%s" % p)
 
-    print("\nCalculating the voltage on the board")
+    print("\nCalculating the Currents on the board")
     for p in pin_list:
         if a[p] is not None:
             tmp = a[p] * scale * 1000
