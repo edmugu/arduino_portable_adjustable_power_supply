@@ -1,0 +1,1 @@
+check the firmata's i2c support on https://mryslab.github.io/pymata4/ 
