@@ -26,7 +26,7 @@ version = "0.1"
 arduino_vcc = 5.0
 pin_list = ["3", "2", "1"]
 pin_name = {"3": "Vout", "2": "Vstep_up", "1": "Vin"}
-pin_scale = {"Vout": 13.38, "Vstep_up": 13.38, "Vin": 3}
+pin_scale = {"Vout": 13.38, "Vstep_up": 13.38, "Vin": 4.61}
 
 
 print("\nread_voltage.py version %s" % version)
@@ -61,10 +61,10 @@ def read_voltage(port="COM3"):
         a[p] = board.analog[int(p)].read()
         for read_tries in range(99):
             if a[p] is not None:
-                vcc_percent = a[p]
+                vcc_percent = a[p] * 100
                 a[p] = a[p] * arduino_vcc
                 print(
-                    "Read %3.2f percent of VCC on pin a%s (= %3.2f Volts)"
+                    "Read %#04.1f%% of VCC on pin a%s (= %3.2f Volts)"
                     % (vcc_percent, p, a[p])
                 )
                 break
@@ -72,7 +72,7 @@ def read_voltage(port="COM3"):
         if a[p] is None:
             print("Read NONE on pin a%s" % p)
 
-    print("\nCalculating the voltage on the board")
+    print("\nCalculating the voltages on the board")
     for p in pin_list:
         if a[p] is not None:
             tmp = a[p] * pin_scale[pin_name[p]]
