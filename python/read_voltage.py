@@ -29,7 +29,7 @@ pin_name = {"3": "Vout", "2": "Vstep_up", "1": "Vin"}
 pin_scale = {"Vout": 13.38, "Vstep_up": 13.38, "Vin": 3}
 
 
-print("\ntools_read_voltage.py version %s" % version)
+print("\nread_voltage.py version %s" % version)
 print("FOR HELP TYPE tools_read_voltage.py --help\n\n")
 
 from pyfirmata import Arduino, util
