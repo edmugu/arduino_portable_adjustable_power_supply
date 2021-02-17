@@ -149,8 +149,8 @@ This is the final stage of the power supply. By having a current monitor at the 
 
 
 
-## (3B) How to use
+## How to use
 
-The easiest way to monitor voltage is use the Arduion Firmata library. This can easily be uploaded by the arduion IDE by opening the example firmata project and uploading to the Arduino. After that you can run the /python/read_voltage.py script provided in this repo. Note the example snip-it shown below. 
+The easiest way to monitor voltage is use the Arduion Firmata library. This can easily be uploaded by the arduion IDE by opening the example firmata project and uploading it to the Arduino. After that you can run the /python/read_voltage.py script provided in this repo. Note the snip-it shown below of the tool running. 
 
 ![read_voltage.py.png](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/read_voltage.py.png "read_voltage.py.png")
