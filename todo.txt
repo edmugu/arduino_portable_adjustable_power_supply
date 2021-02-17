@@ -2,7 +2,7 @@ Before Next Hardware revision
     check the firmata's i2c support on https://mryslab.github.io/pymata4/ 
   
 Must have fixes on the Next Hardware revision
-    Fix the Diode footprint that is backwares
+    Fix the Diode footprint that is backwards
     Add a jumper to connect the board vin to the arduino Vin
     Add LED lighst to indicate 
         That the voltage levels are good
