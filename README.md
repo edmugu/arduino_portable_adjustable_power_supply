@@ -146,3 +146,11 @@ The main challenge is that the voltage of the first substage should be above the
 ### (4) Final Battery Current Monitor stage
 
 This is the final stage of the power supply. By having a current monitor at the begging and the end we can calculate the efficiency of the power supply.
+
+
+
+## How to use
+
+The easiest way to monitor voltage is use the Arduion Firmata library. This can easily be uploaded by the arduion IDE by opening the example firmata project and uploading it to the Arduino. After that you can run the /python/read_voltage.py script provided in this repo. Note the snip-it shown below of the tool running. 
+
+![read_voltage.py.png](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/read_voltage.py.png "read_voltage.py.png")
