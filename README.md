@@ -158,7 +158,7 @@ The easiest way to monitor voltage is to use the Arduino Firmata library. This c
 ![read_voltage.py.png](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/read_voltage.py.png "read_voltage.py.png")
 
 ## Bring up 
-While bringing up I noticed a couple of issues that can be fix but should be address on the next version. The first issue noted was that the SMA DIODE footprint was backwards [This is what happens when you use the "free community software" and you are a noob with the tool]. 
+While bringing up I noticed a couple of issues that can be fix but should be address on the next version. The first issue noted was that the SMA DIODE footprint was backwards [This is what happens when you use the "free community software" and you are a newbie with the tool]. The second issue is that there should be away to select the arduinos VIN voltage that comes from the barrel connector. 
 
 
 ![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
