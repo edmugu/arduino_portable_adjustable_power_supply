@@ -156,3 +156,6 @@ This is the final stage of the power supply. By having a current monitor at the 
 The easiest way to monitor voltage is to use the Arduino Firmata library. This can easily be uploaded by the Arduino IDE by opening the example firmata project and uploading it to the Arduino. After that, you can run the /python/read_voltage.py script provided in this repo.
 
 ![read_voltage.py.png](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/read_voltage.py.png "read_voltage.py.png")
+
+## Bring up 
+While bringing up I noticed a couple of issues that can be fix but should be address on the next version. The first issue noted was that the SMA DIODE footprint was backwards [This is what happens when you use the "free community software" and you are a noob with the tool]. 
