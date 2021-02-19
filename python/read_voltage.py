@@ -24,9 +24,9 @@ version = "0.1"
 
 
 arduino_vcc = 5.0
-pin_list = ["3", "2", "1"]
-pin_name = {"3": "Vout", "2": "Vstep_up", "1": "Vin"}
-pin_scale = {"Vout": 13.38, "Vstep_up": 13.38, "Vin": 4.61}
+pin_list = ["1", "2", "5", "3"]
+pin_name = {"5": "Vstep_down", "3": "Vout", "2": "Vstep_up", "1": "Vin"}
+pin_scale = {"Vstep_down": 36.36, "Vout": 13.38, "Vstep_up": 13.38, "Vin": 4.61}
 
 
 print("\nread_voltage.py version %s" % version)
