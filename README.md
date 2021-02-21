@@ -148,6 +148,12 @@ The main challenge is that the first substage's voltage should be above the outp
 This is the final stage of the power supply. By having a current monitor at the beginning and the end, we can calculate the efficiency of the power supply.
 
 
+## Bring up 
+While bringing up, I noticed a couple of issues that can be fixed but should be addressed in the next version. The first issue noted was that the SMA DIODE footprint was backward [This is what happens when you use the "free community software" and you are a newbie with the tool]. The second issue is that there should be a way to select the Arduino's VIN voltage from the barrel connector.
+
+
+![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
+
 
 ## How to use
 
@@ -155,10 +161,5 @@ The easiest way to monitor voltage is to use the Arduino Firmata library. This c
 
 ![read_voltage.py.png](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/read_voltage.py.png "read_voltage.py.png")
 
-## Bring up 
-While bringing up, I noticed a couple of issues that can be fixed but should be addressed in the next version. The first issue noted was that the SMA DIODE footprint was backward [This is what happens when you use the "free community software" and you are a newbie with the tool]. The second issue is that there should be a way to select the Arduino's VIN voltage from the barrel connector.
-
-
-![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
 
 
