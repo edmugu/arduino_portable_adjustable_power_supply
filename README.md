@@ -10,6 +10,7 @@ This project is based on the [LT journal's Article from Keith Szolusha](https://
 ## Intro
 
 On the original design by Szolusha, there are four modules. (1) a switching regulator that steps down a 10-40V input to an intermediate voltage that is slightly above the output voltage. (2) Linear regulator that "cleans" the output. (3) The current source sets a reference voltage that is not affected by temperature. Lastly, (4) A current sink that helps the Linear regulator reach low voltages.
+
 We will modify each block to fit our needs, making this portable and usable with any common household batteries. So the base design is shown on the diagram below. The first step is to step-up the voltage of the battery to a usuable voltage we can step down. From there the second step is to step-down the voltage to the wanted voltages like 3.3 Volts, 5.0 Volts and Vout. However, the efficient step-down switches can create "switching ripples" on the output. These ripples aren't a big deal; however, if one needs a very clean supply one could use a inefficient LDO regulator. So will use the step-down switch and regulator to create a clean semi-efficent voltage output as shown on the diagram. 
 
 ![logic schematics](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/python/Assets/Arduino-power-supply.png "logic schematics")
@@ -74,6 +75,7 @@ Versions:
 ## Design Procedure
 ### (1) Battery Current Monitor stage
 The input batteries used might have a current limit (i.e., the maximum current will be 2.4 Amps as the typical use case). This will be done to ensure the life of the battery. The first step will be to measure the current going into the device. This can be done with a current monitor with a voltage range from 0 to 14V and that can detect <2.4 Amps through a sense resistor. The **INA199** meets the voltage range requirement, and it has a x200 gain.
+
 R_Sense should be less than 1 ohm since it will have up to 1 Amp going through it. However, it should be high enough to detect the voltage drop. Therefore, we installed a 100mOhm sense resistor with four terminals. We could have picked a smaller resistor, but since this will most likely will be read by a cheap Arduino, we stuck with that value. Futher, to avoid measuring the voltage drop across the solder pads, we installed a four-terminal resistor.
 
 |        | Voltage      | Notes                     |
