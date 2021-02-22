@@ -151,6 +151,8 @@ This is the final stage of the power supply. By having a current monitor at the 
 ## Bring up 
 While bringing up, I noticed a couple of issues that can be fixed but should be addressed in the next version. The first issue noted was that the SMA DIODE footprint was backward [This is what happens when you use the "free community software" and you are a newbie with the tool]. The second issue is that there should be a way to select the Arduino's VIN voltage from the barrel connector.
 
+I also noted that the 2 stage feedback needed a simple fixed. When I tried the circuit for the first time it got stuck at Vin=2.6V and Vout=1.8V and could not output anyother voltage. This was fixed by making the Vi-Vout > 3Volts since the LM317 requires that minimun voltage. 
+
 
 ![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
 
