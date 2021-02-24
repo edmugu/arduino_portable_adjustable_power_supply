@@ -132,7 +132,7 @@ The main challenge is that the first substage's voltage should be above the outp
 
 ### (4) Final Battery Current Monitor stage
 
-This is the final stage of the power supply. By having a current monitor at the beginning and the end, we can calculate the efficiency of the power supply.
+This is the final stage of the power supply. By having a current monitor at the beginning and the end, we can calculate the efficiency of the power supply. Also the feedback voltage of the previous stage takes the drop accross this stage by feeding the "final" voltage to linear regulator. 
 
 
 ## Bring up 
