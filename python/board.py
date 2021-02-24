@@ -50,86 +50,85 @@ class Board(object):
             self.board.analog[p["num"]].enable_reporting()
         time.sleep(0.1)
 
+    def print(self, msg, verbose=True):
+        if verbose:
+            print(msg)
+
     def read_voltage(self, read_retries=99, verbose=True):
         """
         It reads the voltage of all the stages of the unit
         """
-        if verbose:
-            print("reading the raw voltages\n")
+        self.print("reading the raw voltages\n", verbose)
         for p in filter(lambda x: x["cur_pin"] == False, self.pins):
             p["value"] = self.board.analog[p["num"]].read()
             for _ in range(read_retries):
                 if p["value"] is not None:
                     vcc_percent = p["value"] * 100
                     p["value"] = p["value"] * self.arduino_vcc
-                    if verbose:
-                        print(
-                            "Read %#04.1f%% of VCC on pin a%s (= %3.2f Volts)"
-                            % (vcc_percent, p["num"], p["value"])
-                        )
+                    self.print(
+                        "Read %#04.1f%% of VCC on pin a%s (= %3.2f Volts)"
+                        % (vcc_percent, p["num"], p["value"]),
+                        verbose,
+                    )
                     break
             if p["value"] is None:
-                if verbose:
-                    print(
-                        "Read NONE on pin a%s [this might be a bug on the board's FW. run again]"
-                        % p
-                    )
-        if verbose:
-            print("\nCalculating the voltages on the board")
+                self.print(
+                    "Read NONE on pin a%s [this might be a bug on the board's FW. run again]"
+                    % p,
+                    verbose,
+                )
+        self.print("\nCalculating the voltages on the board", verbose)
         for p in filter(lambda x: x["cur_pin"] == False, self.pins):
             if p["value"] is not None:
                 p["value"] = p["value"] * p["scale"]
-                if verbose:
-                    print("%9s is %#05.2f Volts" % (p["name"], p["value"]))
+                self.print("%9s is %#05.2f Volts" % (p["name"], p["value"]), verbose)
 
     def read_current(self, read_retries=99, verbose=True):
         """
         It reads the current going in and out
         """
-        if verbose:
-            print("reading the raw voltages\n")
+        self.print("reading the raw voltages\n", verbose)
         for p in filter(lambda x: x["cur_pin"] == True, self.pins):
             p["value"] = self.board.analog[p["num"]].read()
             for _ in range(read_retries):
                 if p["value"] is not None:
                     vcc_percent = p["value"] * 100
                     p["value"] = p["value"] * self.arduino_vcc
-                    if verbose:
-                        print(
-                            "Read %#04.1f%% of VCC on pin a%s (= %3.2f Volts)"
-                            % (vcc_percent, p["num"], p["value"])
-                        )
+                    s = "Read %#04.1f%% of VCC on pin a%s (= %3.2f Volts)" % (
+                        vcc_percent,
+                        p["num"],
+                        p["value"],
+                    )
+                    self.print(s, verbose)
                     break
             if p["value"] is None:
-                if verbose:
-                    print(
-                        "Read NONE on pin a%s [this might be a bug on the board's FW. run again]"
-                        % p
-                    )
+                self.print(
+                    "Read NONE on pin a%s [this might be a bug on the board's FW. run again]"
+                    % p,
+                    verbose,
+                )
 
-        if verbose:
-            print("\nCalculating the voltages on the board")
+        self.print("\nCalculating the voltages on the board", verbose)
         for p in filter(lambda x: x["cur_pin"] == True, self.pins):
             if p["value"] is not None:
                 p["value"] = p["value"] * p["scale"]
-                if verbose:
-                    print("%9s is %#07.2f miliAmps" % (p["name"], p["value"] * 1000))
+                self.print(
+                    "%9s is %#07.2f miliAmps" % (p["name"], p["value"] * 1000), verbose
+                )
 
     def calculate_load(self, read_retries=99, verbose=True):
         self.read_voltage(read_retries, verbose=False)
         self.read_current(read_retries, verbose=False)
-        if verbose:
-            print("Calculating the load on the output\n")
+        self.print("Calculating the load on the output\n", verbose)
 
         pvout = list(filter(lambda x: x["name"] == "Vout", self.pins))[0]["value"]
         piout = list(filter(lambda x: x["name"] == "Iout", self.pins))[0]["value"]
 
         if (pvout is None) or (piout is None):
-            print("had issues reading voltage or current")
+            self.print("had issues reading voltage or current", verbose)
             return
         ans = pvout / piout
-        if verbose:
-            print("Rload is %05.2f\n" % ans)
+        self.print("Rload is %05.2f\n" % ans, verbose)
 
 
 if __name__ == "__main__":
