@@ -130,6 +130,19 @@ class Board(object):
         ans = pvout / piout
         self.print("Rload is %05.2f\n" % ans, verbose)
 
+    def calculate_power(self, read_tries=99):
+        self.calculate_load(read_retries=99, verbose=False)
+        vin = list(filter(lambda x: x["name"] == "Vin", self.pins))[0]["value"]
+        iin = list(filter(lambda x: x["name"] == "Iin", self.pins))[0]["value"]
+        vout = list(filter(lambda x: x["name"] == "Vout", self.pins))[0]["value"]
+        iout = list(filter(lambda x: x["name"] == "Iout", self.pins))[0]["value"]
+
+        pin = vin * iin
+        pout = vout * iout
+
+        self.print("Power in : %7.3f Watts" % pin)
+        self.print("Power out: %7.3f Watts" % pout)
+
 
 if __name__ == "__main__":
     fire.Fire(Board)
