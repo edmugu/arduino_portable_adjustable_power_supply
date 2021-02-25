@@ -24,9 +24,10 @@ class Board(object):
     """
     It controls the Arduino_Adjustable_Power_Supply module
     """
-
+    log = ""
     version = "0.1"
     arduino_vcc = 5.0
+
 
     v_to_i = 1.0 / (100 * 0.1)
     power = {"in": None, "out": None}
@@ -52,8 +53,12 @@ class Board(object):
         time.sleep(0.1)
 
     def print(self, msg, verbose=True):
+        self.log += "\n" + msg
         if verbose:
             print(msg)
+
+    def print_lot(self):
+        print(self.log)
 
     def read_voltage(self, read_retries=99, verbose=True):
         """
