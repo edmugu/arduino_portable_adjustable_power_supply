@@ -29,6 +29,7 @@ class Board(object):
     arduino_vcc = 5.0
 
     v_to_i = 1.0 / (100 * 0.1)
+    power = {"in": None, "out": None}
     pins = [
         {"num": 0, "name": "Iin", "scale": v_to_i, "cur_pin": True, "value": None},
         {"num": 1, "name": "Vin", "scale": 4.56, "cur_pin": False, "value": None},
@@ -137,11 +138,16 @@ class Board(object):
         vout = list(filter(lambda x: x["name"] == "Vout", self.pins))[0]["value"]
         iout = list(filter(lambda x: x["name"] == "Iout", self.pins))[0]["value"]
 
-        pin = vin * iin
-        pout = vout * iout
+        self.power["in"] = vin * iin
+        self.power["out"] = vout * iout
 
-        self.print("Power in : %7.3f Watts" % pin)
-        self.print("Power out: %7.3f Watts" % pout)
+        self.print("Power in : %7.3f Watts" % self.power["in"])
+        self.print("Power out: %7.3f Watts" % self.power["out"])
+
+    def calculate_efficiency(self, read_tries=99):
+        self.calculate_power()
+        efficiency = self.power["in"] / self.power["out"]
+        self.print("Efficiency: %4.1f %% " % efficiency)
 
 
 if __name__ == "__main__":
