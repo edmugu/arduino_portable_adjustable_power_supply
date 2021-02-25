@@ -151,7 +151,7 @@ class Board(object):
 
     def calculate_efficiency(self, read_tries=99):
         self.calculate_power()
-        efficiency = self.power["in"] / self.power["out"]
+        efficiency = self.power["out"] / self.power["in"]
         self.print("Efficiency: %4.1f %% " % efficiency)
 
 
