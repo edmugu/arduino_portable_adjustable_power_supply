@@ -1,4 +1,4 @@
-,,,
+pcie connector used for testing porpuses,,,
 ,,,
 pin ,side,description,use on this project
 1,b,12 V power,VIN
