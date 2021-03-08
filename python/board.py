@@ -5,9 +5,12 @@ Created on Sun Feb 18 2021
 Controls the board.
 
 EXAMPLE: 
-        python board.py --port=COM3
-        
-REQUIREMENTS: 
+        python board.py --port=COM3 read_voltage
+        python board.py --port=COM3 read_current
+        python board.py --port=COM3 calculate_load --verbose=False
+
+
+REQUIREMENTS:
     python 3.7+
     pyfirmata  (to talk to the arduino)
     fire (to create command line tool)
@@ -24,10 +27,11 @@ class Board(object):
     """
     It controls the Arduino_Adjustable_Power_Supply module
     """
+
     log = ""
     version = "0.1"
     arduino_vcc = 5.0
-
+    read_retries = 9  # The firmata library sometimes needs to reread analog voltage
 
     v_to_i = 1.0 / (100 * 0.1)
     power = {"in": None, "out": None}
@@ -60,14 +64,14 @@ class Board(object):
     def print_lot(self):
         print(self.log)
 
-    def read_voltage(self, read_retries=99, verbose=True):
+    def read_voltage(self, verbose=True):
         """
         It reads the voltage of all the stages of the unit
         """
         self.print("reading the raw voltages\n", verbose)
         for p in filter(lambda x: x["cur_pin"] == False, self.pins):
             p["value"] = self.board.analog[p["num"]].read()
-            for _ in range(read_retries):
+            for _ in range(self.read_retries):
                 if p["value"] is not None:
                     vcc_percent = p["value"] * 100
                     p["value"] = p["value"] * self.arduino_vcc
@@ -89,14 +93,14 @@ class Board(object):
                 p["value"] = p["value"] * p["scale"]
                 self.print("%9s is %#05.2f Volts" % (p["name"], p["value"]), verbose)
 
-    def read_current(self, read_retries=99, verbose=True):
+    def read_current(self, verbose=True):
         """
         It reads the current going in and out
         """
         self.print("reading the raw voltages\n", verbose)
         for p in filter(lambda x: x["cur_pin"] == True, self.pins):
             p["value"] = self.board.analog[p["num"]].read()
-            for _ in range(read_retries):
+            for _ in range(self.read_retries):
                 if p["value"] is not None:
                     vcc_percent = p["value"] * 100
                     p["value"] = p["value"] * self.arduino_vcc
@@ -122,9 +126,9 @@ class Board(object):
                     "%9s is %#07.2f miliAmps" % (p["name"], p["value"] * 1000), verbose
                 )
 
-    def calculate_load(self, read_retries=99, verbose=True):
-        self.read_voltage(read_retries, verbose=False)
-        self.read_current(read_retries, verbose=False)
+    def calculate_load(self, verbose=True):
+        self.read_voltage(verbose=False)
+        self.read_current(verbose=False)
         self.print("Calculating the load on the output\n", verbose)
 
         pvout = list(filter(lambda x: x["name"] == "Vout", self.pins))[0]["value"]
@@ -137,7 +141,7 @@ class Board(object):
         self.print("Rload is %05.2f\n" % ans, verbose)
 
     def calculate_power(self, read_tries=99):
-        self.calculate_load(read_retries=99, verbose=False)
+        self.calculate_load(verbose=False)
         vin = list(filter(lambda x: x["name"] == "Vin", self.pins))[0]["value"]
         iin = list(filter(lambda x: x["name"] == "Iin", self.pins))[0]["value"]
         vout = list(filter(lambda x: x["name"] == "Vout", self.pins))[0]["value"]
