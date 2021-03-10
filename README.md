@@ -163,5 +163,8 @@ The easiest way to monitor voltage is to use the Arduino Firmata library. This c
 
 ![read_voltage.py.png](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/read_voltage.py.png "read_voltage.py.png")
 
+## Test validation
+
+To guarantee that the board works and can be massed produced some basic validation test have to be set. These should include software and hardware test, [which are described on the wiki with more details](https://github.com/edmugu/arduino_adjustable_power_supply/wiki/Hardware-Test-procedure)
 
 
