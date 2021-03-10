@@ -151,7 +151,7 @@ After checking that the enable pin was high and that the switching output was do
 Note that the feed back to the last two stages can be selected between a "fixed" voltage divided that would allow the output go all the way to 27 volts. Or it can be selected to be the dynamic feedback circuit that would keep the voltage of the last two stages close to each other. The circuit worked fine when the fixed voltage divider was used however it got stuck at 1.8 volts when it was switch to the dynamic feedback. At that moment, the feedback circuit was set to have 0.8 Volts difference between the two stages. And indeed there was a 0.8 volt difference between the stages. So I though that may be if I raised the difference to 5 volts it would work. Luckly, it did and after looking for an explanation I noted that the linear regulator needed at least 3 volts difference between its output and its input. 
 	
 ### Bug 3: The output can only drive <1 mA before it starts to struggle. 
-I believe this is due to the sma 10 uH capacitors I chose. I should have had picked barrel capacitor. Well better luck next time. 
+I believe this is due to the sma 10 uF capacitors I chose. I should have had picked barrel capacitor. Well better luck next time. 
 
 
 ![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
