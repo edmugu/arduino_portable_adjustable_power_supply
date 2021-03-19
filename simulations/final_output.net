@@ -1,32 +1,32 @@
 * C:\Projects\Github\arduino_adjustable_power_supply\simulations\final_output.asc
-XU1 N009 N007 N006 LT1117
-C1 N007 0 10µ V=33 Irms=0 Rser=0.3 Lser=0 mfg="KEMET" pn="T495D106M035AS" type="Tantalum"
-V1 N001 0 4.25
-R2 N007 N009 121
-R3 N009 0 154
-I1 N007 0 10
-XU2 N005 N004 N003 0 N011 N012 N004 LT1578
-C2 N003 N005 33µ
-C3 N006 0 10µ
-C4 N011 0 100p
-C5 N004 0 10µ
-D1 0 N005 1N5818
-D2 N006 N003 1N914
-R4 N006 N012 8.6K
-R5 N012 0 5K
-L1 N005 N006 15µH
-XU3 N008 N004 N001 N010 N001 N001 N001 N002 0 LT3473
-L2 N001 N002 6.8µ
-C6 N008 0 .47µ
-C7 N001 0 4.7µ
-R1 N008 N010 2000k
-R6 N010 0 100k
-C8 N004 0 2.2µ
+C1 vout 0 10µ V=33 Irms=0 Rser=0.3 Lser=0 mfg="KEMET" pn="T495D106M035AS" type="Tantalum"
+V1 vin 0 4.25
+R2 vout N005 121
+R3 N005 0 880
+XU2 N003 step_up N002 0 N007 N008 step_up LT1578
+C2 N002 N003 33µ
+C3 step-down 0 10µ
+C4 N007 0 100p
+C5 step_up 0 10µ
+D1 0 N003 1N5818
+D2 step-down N002 1N914
+R4 step-down N008 2k
+R5 N008 0 121
+L1 N003 step-down 60µH
+XU3 N004 step_up vin N006 vin vin vin N001 0 LT3473
+L2 vin N001 6.8µ
+C6 N004 0 .47µ
+C7 vin 0 4.7µ
+R1 N004 N006 2000k
+R6 N006 0 50k
+C8 step_up 0 2.2µ
+XU5 N005 vout step-down LT317A
+I1 vout 0 SINE(0 1 200 3m 0 .5m)
 .model D D
 .lib C:\Users\emuno\OneDrive\Documents\LTspiceXVII\lib\cmp\standard.dio
-.tran 300u
-.lib LT1117.lib
+.tran 0 5m 0 1u
 .lib LT1578.sub
 .lib LT3473.sub
+.lib LTC.lib
 .backanno
 .end
