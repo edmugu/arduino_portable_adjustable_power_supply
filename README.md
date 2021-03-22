@@ -165,6 +165,9 @@ I believed this is due to the sma capacitos. However I noted that this issue whe
 
 ![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
 
+## Thermal test
+![thermal picture](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/1_watt_thermal.PNG "Thermal picture")
+
 
 ## How to use
 
