@@ -21,3 +21,11 @@ just_the_docs:
       # Exclude the collection from the search
       # Supports true or false (default)
       search_exclude: false
+
+# Aux links for the upper right navigation
+aux_links:
+  "Link to GitHub":
+    - "//github.com/edmugu/arduino_adjustable_power_supply"
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: false
