@@ -5,7 +5,7 @@ remote_theme: pmarsceill/just-the-docs
 collections:
   # Define a collection named "docs", its documents reside in the "_docs" directory
   docs:
-    permalink: "/jekyll_docs"
+    permalink: "//github.com/edmugu/arduino_adjustable_power_supply/tree/master/jekyll_docs"
     output: true
 
 just_the_docs:
