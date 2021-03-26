@@ -1,3 +1,10 @@
+---
+title: Test
+has_children: no
+nav_order: 3
+---
+
+
 Before Next Hardware revision
     check the firmata's i2c support on https://mryslab.github.io/pymata4/ 
   
