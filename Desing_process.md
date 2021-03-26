@@ -1,5 +1,5 @@
 ---
-title: Debugging
+title: Design Process
 has_children: no
 nav_order: 20
 ---
