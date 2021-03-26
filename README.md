@@ -1,4 +1,4 @@
-# [arduino_adjustable_power_supply](https://edmugu.github.io/arduino_adjustable_power_supply/)
+# [Arduino Adjustable Power Supply](https://edmugu.github.io/arduino_adjustable_power_supply/)
 
 ![3d view of pcb file](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/3d%20view.PNG "Power Supply")
 
