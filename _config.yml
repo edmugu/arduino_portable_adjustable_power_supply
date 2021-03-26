@@ -1,5 +1,5 @@
-title: Arduino Power Supply
-description: Arduino Power Supply
+title: Arduino Adjustable Power Supply
+description: Arduino Adjustable Power Supply
 baseurl: "/arduino_adjustable_power_supply" # the subpath of your site, e.g. /blog
 url: "https://edmugu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: pmarsceill/just-the-docs
