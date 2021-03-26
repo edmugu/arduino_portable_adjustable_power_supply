@@ -1,7 +1,7 @@
 ---
 title: Debugging
 has_children: no
-nav_order: 2
+nav_order: 30
 ---
 
 # Debugging Process

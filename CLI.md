@@ -1,7 +1,7 @@
 ---
 title: CLI
 has_children: no
-nav_order: 3
+nav_order: 40
 ---
 
 # Command Line Interface
