@@ -1,8 +1,4 @@
----
-title: Main
-has_children: false
-nav_order: 1
----
+
 
 
 # [Arduino Adjustable Power Supply](https://edmugu.github.io/arduino_adjustable_power_supply/)
