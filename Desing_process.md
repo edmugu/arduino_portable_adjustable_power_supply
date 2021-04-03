@@ -126,14 +126,6 @@ This is the final stage of the power supply. By having a current monitor at the 
  To make the design controllable by an Arduino an I2C digital pot was added to the one of the choose able feedback circuits. 
 
 
-### (6) Price per stage
-Current Monitor 	INA199B is about $0.80 ($1.60 for two)
-Step-Up Voltage 	LMR64010 is about $1.61
-Step-Down Voltage 	AOZ1282CI is about $1.15
-Regulator  		LM317 is about $0.60
-
-Main IC cost  		$4.69
-
 
 ![regulator_feedback](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/regulator_feedback.PNG)
 
