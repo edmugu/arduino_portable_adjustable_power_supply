@@ -3,6 +3,8 @@ title: Debugging
 has_children: no
 nav_order: 30
 ---
+![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
+
 
 # Debugging Process
 ## Bug 1: The voltage of the first stage does not go above vin
@@ -10,7 +12,7 @@ After checking that the enable pin was high and that the switching output was do
 
 
 
-![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
+![diode zoomed](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/diode_zoomed.PNG  "diode zoomed")
 
 
 
