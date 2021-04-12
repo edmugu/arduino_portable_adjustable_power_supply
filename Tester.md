@@ -5,3 +5,4 @@ nav_order: 50
 ---
 
 # Tester
+A tester capable of testing all the stages indidually and together is descrived here https://edmugu.github.io/power_supply_tester/
