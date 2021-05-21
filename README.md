@@ -22,8 +22,7 @@ On the original design by Szolusha, there are four modules. (1) a switching regu
 
 We will modify each block to fit our needs, making this portable and usable with any common household batteries. So the base design is shown on the diagram below. The first step is to step-up the voltage of the battery to a usuable voltage we can step down. From there the second step is to step-down the voltage to the wanted voltages like 3.3 Volts, 5.0 Volts and Vout. However, the efficient step-down switches can create "switching ripples" on the output. These ripples aren't a big deal; however, if one needs a very clean supply one could use a inefficient LDO regulator. So will use the step-down switch and regulator to create a clean semi-efficent voltage output as shown on the diagram. 
 
-![logic schematics](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/python/Assets/Arduino-power-supply.png "logic schematics")
+![logic schematics](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/Arduino-power-supply.png "logic schematics")
 
 The main target battery is a USB power bank. Most USB power banks can deliver 12W @ 5Volts. Hence, this power supply will deliver 10 Watts at its output to accommodate the inefficiencies of the power stages of this design. Since the default use case will be to power a 50-ohm load, the maximum voltage at the output should be greater than 22.36 Volts to deliver 10 Watts.
-
 
