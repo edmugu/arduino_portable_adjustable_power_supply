@@ -1,6 +1,7 @@
 ---
 title: CLI
 has_children: no
+parent: Rev. A
 nav_order: 40
 ---
 

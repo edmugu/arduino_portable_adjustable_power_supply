@@ -1,8 +1,7 @@
 ---
-title: Todo
-has_children: no
+title: Rev. A
+has_children: yes
 nav_order: 50
-parent:Rev. A
 ---
 
 
