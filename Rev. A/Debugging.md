@@ -2,6 +2,7 @@
 title: Debugging
 has_children: no
 nav_order: 30
+parent: Rev. A
 ---
 ![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
 
@@ -27,5 +28,4 @@ A few notes on the prototype:
 	(2) the wires used are size AWG 20 and they are able to handle 1.5 amps, this should not be limiting factor, yet. 
 	
 ![prototype out of eval boards](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/debugging.PNG  "prototype out of eval boards")
-
 
