@@ -1,7 +1,7 @@
 ---
 title: PCB Files
 has_children: no
-parent:Rev. A
+parent: Rev. A
 nav_order: 40
 ---
 
