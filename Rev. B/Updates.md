@@ -2,6 +2,7 @@
 layout: default
 title: Rev. B Updates
 nav_order: 2
+parent: Rev. B
 description: "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
 permalink: /
 ---
