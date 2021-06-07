@@ -2,7 +2,7 @@
 title: Design Process
 has_children: no
 parent: Rev. A
-nav_order: 20
+nav_order: 1
 ---
 
 # Design process

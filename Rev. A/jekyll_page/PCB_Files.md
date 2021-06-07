@@ -2,7 +2,7 @@
 title: PCB Files
 has_children: no
 parent: Rev. A
-nav_order: 40
+nav_order: 4
 ---
 
 All PCB files can be found on the link below. 

@@ -1,7 +1,7 @@
 ---
 title: Thermal_test
 has_children: no
-nav_order: 31
+nav_order: 6
 parent: Rev. A
 ---
 

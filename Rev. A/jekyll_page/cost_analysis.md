@@ -2,7 +2,7 @@
 title: Cost Analysis
 has_children: no
 parent: Rev. A
-nav_order: 30
+nav_order: 3
 ---
 
 # Cost Analysis

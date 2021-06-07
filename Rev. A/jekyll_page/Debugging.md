@@ -1,7 +1,7 @@
 ---
 title: Debugging
 has_children: no
-nav_order: 30
+nav_order: 2
 parent: Rev. A
 ---
 
