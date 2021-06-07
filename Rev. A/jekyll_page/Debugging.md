@@ -4,14 +4,14 @@ has_children: no
 nav_order: 30
 parent: Rev. A
 ---
-![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
+
 
 
 # Debugging Process
 ## Bug 1: The voltage of the first stage does not go above vin
 After checking that the enable pin was high and that the switching output was doing what it was suppose to be doing, I decided to replace the switch. However, it still showed the same behavior. Vout would reach >30 Volts then it would drop to Vin. Then I checked my sma units on a eval board and they work. At that moment, I started to investigate the second most complicated unit on the first stage, the diode. Then it was clear that the issue was that I installed the diode backwards. However the silkscreen and schematics had the diode on the right orientation. Which meant that the footprint pads of the diode were swapped. 
 
-
+![board bring up](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/picture%20of%20bringup.PNG  "board bring up")
 
 ![diode zoomed](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/diode_zoomed.PNG  "diode zoomed")
 
