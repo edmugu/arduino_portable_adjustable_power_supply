@@ -11,6 +11,10 @@ After debugging the Rev A board, I noted that at the moment there was no IC sold
 
 Also, while design Rev A board, I did not realized that the final linear voltage regular used **LM317** is very inefficient since it requires at least 3-volts difference between the input and the output. That is when I can with the **MIC5157** voltage controller. 
 
+## (2) Reverse Voltage Protection
+
+This is some thing that was not included on Rev. A at all and it is important. 
+
 ## (3) Minimum voltage output
 
 The minimum voltage output most voltage regulator can output is its internal reference voltage level. So most regulators can't go below 1.2 Volts by themselves. And this really bother me since the reference design from Linear Technologies can be to 0 volts. Then I found this article from Texas Instruments on how to tackle this issue which 
