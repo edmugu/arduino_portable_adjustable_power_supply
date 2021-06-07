@@ -17,6 +17,7 @@ This is something that was not included on Rev. A at all, and it is important.
 
 ## (3) Minimum voltage output
 
-The minimum voltage output most voltage regulators can output is its internal reference voltage level. So most regulators can't go below 1.2 Volts by themselves. And this bothers me since the reference design from Linear Technologies can be to 0 volts. Then I found this article from Texas Instruments on how to tackle this issue which 
+The minimum voltage output most voltage regulators can output is its internal reference voltage level. So most regulators can't go below 1.2 Volts by themselves. And this bothers me since the reference design from Linear Technologies can be to 0 volts. Then I found this article from Texas Instruments on how to tackle this issue which is [linked here](https://github.com/edmugu/arduino_adjustable_power_supply/blob/master/documentation/TI_Below_1V2.pdf) 
 
-[linked here]  https://github.com/edmugu/arduino_adjustable_power_supply/blob/master/documentation/TI_Below_1V2.pdf 
+
+
