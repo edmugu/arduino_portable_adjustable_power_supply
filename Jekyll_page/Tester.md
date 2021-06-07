@@ -1,7 +1,7 @@
 ---
 title: Tester
 has_children: no
-nav_order: 50
+nav_order: 2
 ---
 
 # Tester

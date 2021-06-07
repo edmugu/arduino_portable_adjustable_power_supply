@@ -1,7 +1,7 @@
 ---
 title: Rev. B
 has_children: yes
-nav_order: 50
+nav_order: 4
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Rev. A
 has_children: yes
-nav_order: 50
+nav_order: 3
 has_toc: false
 ---
 
