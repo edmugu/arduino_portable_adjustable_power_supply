@@ -11,7 +11,7 @@ parent: Rev. A
 
 ## How much current can be drawn in and drawn out
 
-The main mistake I made was on the step-up stage. I expected this stage to be able to handle 1 amp current since the datasheet of the step-up regulator mention that this was a ***"40Vout, 1A Step-Up voltage regulator."\*** However, that current can only be achieved when the output voltage is close to the input voltage as shown in the figures below. Now in figure 10, one can see that when the input voltage is 3.3Volts, and the output voltage is 15Volts, the output current will be less than 200 mA. The reason is that the regulator can only handle 1 Amp. So it can only output the 3.3 Watts it gets in [ = 3.3 Volts * 1 amp]. This means it can only deliver a maximum of 0.22 Amps [= 3.3 watts / 15 volts ]. 
+The main mistake I made was on the step-up stage. I expected this stage to be able to handle 1 amp current since the datasheet of the step-up regulator mention that this was a ***"40Vout, 1A Step-Up voltage regulator."\*** However, current can only be achieved when the output voltage is close to the input voltage, as shown in the figures below. Now in figure 10, one can see that when the input voltage is 3.3Volts, and the output voltage is 15Volts, the output current will be less than 200 mA. The reason is that the regulator can only handle 1 Amp. So it can only output the 3.3 Watts it gets in [ = 3.3 Volts * 1 amp]. This means it can only deliver a maximum of 0.22 Amps [= 3.3 watts / 15 volts ]. 
 
 ![LMR64010 current chart](https://raw.githubusercontent.com/edmugu/arduino_adjustable_power_supply/master/documentation/snippets/lmr64010_current_chart.PNG)
 
